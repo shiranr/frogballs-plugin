@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.jenkins-ci.tools:gradle-jpi-plugin:0.5.0'
+    }
+}
+
+apply plugin: 'jpi'
+apply plugin: 'idea'
+
+dependencies{
+    groovy (group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.8.9')
+//    groovy (group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.3.3')
+}
+
+groupId = 'hudson.plugins.frogballs'
+version = '1.0'
+description = 'Frog balls'
+
+jenkinsPlugin {
+    coreVersion = '1.457'
+    displayName = 'Frog balls plugin for a froggie build.'
+    url = 'http://jfrog.com/'
+    developers {
+        developer {
+            id 'shiranr'
+            name 'Shiran Rubin'
+            email 'shiranr@jfrog.com'
+        }
+    }
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.10'
+}
