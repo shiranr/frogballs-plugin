@@ -11,6 +11,7 @@ apply plugin: 'jpi'
 apply plugin: 'idea'
 
 dependencies{
+    //Supported by Jenkins core
     groovy (group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.8.9')
 //    groovy (group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.3.3')
 }
